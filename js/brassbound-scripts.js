@@ -161,6 +161,7 @@ jQuery(function($) {
     $(document).ready(function() {
         mobileToggle();
         stickyHeader();
+        $(window).scrollTop($(window).scrollTop() + 1);
     });
 
     var windowWidth = $(window).width();
