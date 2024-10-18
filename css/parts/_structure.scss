@@ -600,8 +600,8 @@
 }
 
 .is-style-angle-left {
-  padding: 10px 0;
-  background: linear-gradient(45deg, var(--wp--preset--color--et-blue) calc(100% - 30px), transparent calc(100% - 30px));
+  padding: 10px 40px 10px 0;
+  background: linear-gradient(45deg, var(--wp--preset--color--et-blue) calc(100% - 40px), transparent calc(100% - 40px));
   &:before {
     right: calc(100% - 2px);
   }
@@ -614,8 +614,8 @@
 }
 
 .is-style-angle-right {
-  padding: 10px 0;
-  background: linear-gradient(-45deg, var(--wp--preset--color--et-blue) calc(100% - 30px), transparent calc(100% - 30px));
+  padding: 10px 0 10px 40px;
+  background: linear-gradient(-45deg, var(--wp--preset--color--et-blue) calc(100% - 40px), transparent calc(100% - 40px));
   text-align: right;
   &:before {
     left: calc(100% - 2px);
