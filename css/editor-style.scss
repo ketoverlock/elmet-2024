@@ -205,59 +205,60 @@ html {
   }
   
   .is-style-angle-left,
-  .is-style-angle-right {
-    position: relative;
-  
-    &:before {
-      content: '';
-      display: block;
-      position: absolute;
-      top: 0;
-      width: 100vw;
-      height: 100%;
-      background: var(--wp--preset--color--et-blue);
-      z-index: 0;
-    }
-    
-    &:after {
-      content: '';
-      display: block;
-      position: absolute;
-      top: 0;
-      width: 50px;
-      height: 100%;
-      z-index: 0;
-    }
+.is-style-angle-right {
+  position: relative;
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100%;
+    background: var(--wp--preset--color--et-blue);
+    z-index: -2;
   }
   
-  .is-style-angle-left {
-    padding: 10px 0;
-    background: linear-gradient(45deg, var(--wp--preset--color--et-blue) calc(100% - 30px), transparent calc(100% - 30px));
-    &:before {
-      right: calc(100% - 2px);
-    }
-    &:after {
-      left: 100%;
-      transform: skew(45deg);
-      background: linear-gradient(to right, var(--wp--preset--color--et-blue) 10px, var(--wp--preset--color--et-navy) 10px,  var(--wp--preset--color--et-navy) 20px, var(--wp--preset--color--et-yellow) 20px);
-      transform-origin: bottom right;
-    }
-  }
-  
-  .is-style-angle-right {
-    padding: 10px 0;
-    background: linear-gradient(-45deg, var(--wp--preset--color--et-blue) calc(100% - 30px), transparent calc(100% - 30px));
-    text-align: right;
-    &:before {
-      left: calc(100% - 2px);
-    }
-    &:after {
-      right: 100%;
-      transform: skew(-45deg);
-      background: linear-gradient(to left, var(--wp--preset--color--et-blue) 10px, var(--wp--preset--color--et-navy) 10px,  var(--wp--preset--color--et-navy) 20px, var(--wp--preset--color--et-yellow) 20px);
-      transform-origin: bottom left;
-    }
+  &:before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    width: calc(100% + 100px);
+    height: 100%;
+    z-index: -1;
   }
 
-  
+  & > * {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.is-style-angle-left {
+    padding: 10px calc(-80px + (100% - 20px) * (1 - cos(45deg))) 10px 0;
+  &:after {
+    right: calc(100% - 2px);
+  }
+  &:before {
+    right: -100px;
+    transform: skew(45deg);
+    background: linear-gradient(to right, var(--wp--preset--color--et-blue) calc(100% - 40px), var(--wp--preset--color--et-navy) calc(100% - 40px),  var(--wp--preset--color--et-navy) calc(100% - 30px), var(--wp--preset--color--et-yellow) calc(100% - 30px));
+    transform-origin: bottom right;
+  }
+}
+
+.is-style-angle-right {
+    padding: 10px 0 10px calc(-80px + (100% - 20px) * (1 - cos(45deg)));
+  &:after {
+    left: calc(100% - 2px);
+  }
+  &:before {
+    left: -100px;
+    transform: skew(-45deg);
+    background: linear-gradient(to left, var(--wp--preset--color--et-blue) calc(100% - 40px), var(--wp--preset--color--et-navy) calc(100% - 40px),  var(--wp--preset--color--et-navy) calc(100% - 30px), var(--wp--preset--color--et-yellow) calc(100% - 30px));
+    transform-origin: bottom right;
+  }
+}
+
 }
